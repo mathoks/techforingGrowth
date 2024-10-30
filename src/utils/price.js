@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 // import dynamic from "next/dynamic";
 
+
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 console.log(baseUrl);
 
