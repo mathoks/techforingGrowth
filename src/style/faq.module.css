@@ -1,0 +1,24 @@
+.left {
+  width: 360px;
+}
+
+.right {
+  width: calc(100% - 360px - 48px);
+}
+
+.title {
+  margin-bottom: 16px;
+  text-align: center;
+  color: var(--secondary-1);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 48px;
+}
+
+.title span {
+  background: var(--primary);
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

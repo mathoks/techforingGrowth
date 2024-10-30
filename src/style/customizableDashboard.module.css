@@ -1,0 +1,75 @@
+.title {
+  color: var(--dark-text-2);
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 48px;
+  width: 60%;
+  text-align: center;
+  margin: auto;
+  margin-top: 96px;
+}
+
+.title span,
+.cardTitle {
+  background: conic-gradient(from -47deg at 70.61% 68.88%, rgba(76, 87, 107, 0.10) 0deg, rgba(0, 0, 0, 0.14) 360deg), linear-gradient(0deg, rgba(1, 116, 109, 0.70) 0%, rgba(1, 116, 109, 0.70) 100%), linear-gradient(143deg, #182F59 25.94%, #020F26 85.35%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stack_card {
+  position: sticky;
+  top: 100px;
+  transform-origin: center top;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  height: 360px;
+  align-items: flex-start;
+  border-radius: 12px;
+  background: #F7F9FD;
+  overflow: hidden;
+}
+
+.cardImg {
+  min-width: 360px;
+  height: 100%;
+  position: relative;
+  display: block;
+}
+
+.cardTitle {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+@media (min-width: 360px) and (max-width: 480px){
+  .title {
+    font-size: 20px;
+    line-height: 28px;
+    width: 100%;
+    margin: auto;
+    margin-top: 96px;
+  }
+  .stack_card {
+    position: sticky;
+    top: 30px;
+    transform-origin: center top;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    align-items: flex-start;
+  }
+  .cardTitle {
+    font-size: 16px;
+    font-weight: 500;
+    list-style: 26px
+  }
+  .cardImg{
+    display: none;
+  }
+}

@@ -1,0 +1,70 @@
+.sticky-element{
+    position: sticky;
+    top: 0;
+}
+/* Adjusted styles to prevent auto-scrolling issues */
+/* .sticky-element {
+    position: relative; 
+} */
+  
+.dropdown{
+    background-color: #FFF;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: all 0.3s ease-out;
+}
+.dropdown.activeDrop{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+.tab_box{
+  display: flex;
+  gap: 5px;
+  list-style: none;
+  overflow-x: hidden;
+}
+.tab_items{
+    position: relative;
+}
+.tab_items.ActiveNavigation{
+    border-bottom: 2px solid transparent;
+    border-image: linear-gradient(90deg,transparent,rgba(26,35,43,0.5),transparent);
+    border-image-slice: 1;
+}
+.tab_items::before{
+  position: absolute;
+  content: "";
+  top: 50%;
+  transform: translateY(-50%);
+  right: -1px;
+  width: 1px;
+  height: 70%;
+  background-color: #8A93A5;
+  transition: all 0.3s ease-out;
+}
+.tab_items_inside{
+    width: 110px;
+    display: flex;
+    align-items: center;
+    margin: 0px 10px;
+}
+.tab_content{
+    font-size: 12px;
+    font-weight: 400;
+    background: conic-gradient(from -47deg at 70.61% 68.88%, rgba(76, 87, 107, 0.05) 0deg, rgba(0, 0, 0, 0.07) 360deg), radial-gradient(50.59% 50.59% at 30.4% 40.06%, rgba(24, 47, 89, 0.20) 0%, rgba(92, 126, 188, 0.20) 100%), linear-gradient(143deg, #182F59 25.94%, #020F26 85.35%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    opacity: 1;
+    transition: all 0.3s ease-out;
+}
+.tab_items.ActiveNavigation .tab_content{
+    opacity: 0.7;
+}
+.tab_images{
+  opacity: 1;
+  transition: all 0.3s ease-out;
+}
+.tab_items.ActiveNavigation .tab_images{
+    opacity: 0.7;
+    transition: all 0.3s ease-out;
+}

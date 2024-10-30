@@ -1,0 +1,46 @@
+<svg width="507" height="507" viewBox="0 0 507 507" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_d_6751_30699)">
+<path d="M53.0296 251.265C53.3769 211.71 65.4459 173.146 87.7101 140.451C109.974 107.755 141.434 82.396 178.111 67.58C214.788 52.764 255.034 49.1566 293.761 57.2141C332.488 65.2715 367.956 84.6319 395.68 112.847L253.022 253.021L53.0296 251.265Z" fill="#5BBC2E"/>
+</g>
+<g filter="url(#filter1_d_6751_30699)">
+<mask id="path-2-inside-1_6751_30699" fill="white">
+<path d="M189.719 442.737C217.261 451.927 246.473 455.009 275.327 451.771C304.18 448.532 331.983 439.051 356.802 423.984C381.622 408.917 402.863 388.628 419.051 364.524C435.239 340.421 445.984 313.082 450.541 284.407L253.019 253.019L189.719 442.737Z"/>
+</mask>
+<path d="M189.719 442.737C217.261 451.927 246.473 455.009 275.327 451.771C304.18 448.532 331.983 439.051 356.802 423.984C381.622 408.917 402.863 388.628 419.051 364.524C435.239 340.421 445.984 313.082 450.541 284.407L253.019 253.019L189.719 442.737Z" stroke="#5BBC2E" strokeWidth="8" shape-rendering="crispEdges" mask="url(#path-2-inside-1_6751_30699)"/>
+</g>
+<g filter="url(#filter2_d_6751_30699)">
+<circle cx="253.023" cy="253.021" r="150" fill="#FAFAFA"/>
+</g>
+<defs>
+<filter id="filter0_d_6751_30699" x="46.0312" y="49.0205" width="366.648" height="224" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="5" dy="8"/>
+<feGaussianBlur stdDeviation="6"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.18 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_6751_30699"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_6751_30699" result="shape"/>
+</filter>
+<filter id="filter1_d_6751_30699" x="182.719" y="249.019" width="284.82" height="224" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="5" dy="8"/>
+<feGaussianBlur stdDeviation="6"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.18 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_6751_30699"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_6751_30699" result="shape"/>
+</filter>
+<filter id="filter2_d_6751_30699" x="96.0234" y="99.0215" width="324" height="324" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="5" dy="8"/>
+<feGaussianBlur stdDeviation="6"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.18 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_6751_30699"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_6751_30699" result="shape"/>
+</filter>
+</defs>
+</svg>

@@ -1,0 +1,175 @@
+.btn {
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  border-radius: 8px;
+  font-size: 22px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.divider {
+  width: 1px;
+  background: linear-gradient(180deg, rgba(2, 0, 36, 0) 0%, #494949 50%, rgba(0, 212, 255, 0) 100%);
+  margin: 0 12px;
+}
+
+.title {
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 48px;
+  width: fit-content;
+  margin: auto;
+}
+
+.item {
+  background: #FFFFFF;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.15);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  border-radius: 8px;
+  padding: 12px 16px;
+  transition: background 1s ease-in-out;
+}
+
+.item span,
+.item svg path {
+  transition: all .3s ease-in-out;
+}
+
+.item.active span,
+.item:hover span {
+  color: #fff;
+}
+
+.item.active svg path,
+.item:hover svg path {
+  fill: #fff;
+}
+
+.item.active svg.stroke path,
+.item:hover svg.stroke path {
+  fill: none;
+  stroke: #fff;
+}
+
+.detailsArea {
+  width: 659px;
+}
+
+.imgArea {
+  width: calc(100% - 659px);
+}
+
+.subTitle {
+  color: var(--dark-text-2);
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 16px;
+}
+
+.details {
+  color: var(--dark-text-3);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 24px;
+  margin-bottom: 24px;
+}
+
+.tagName {
+  color: var(--dark-text-3);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+}
+
+/* cta */
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 40px;
+  padding: 115px 0;
+  margin-top: 96px;
+}
+
+.cta .subTitle {
+  color: var(--white);
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 16px;
+}
+
+/* PageCommonBanner */
+.pageCommonBanner {
+  height: 265px;
+  background-image: url(../../public/honeyComBG.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.blurShade {
+  position: absolute;
+  height: 122px;
+  width: 100%;
+  background: linear-gradient(0deg, #FFF 0%, rgba(255, 255, 255, 0.92) 44.27%, rgba(255, 255, 255, 0.00) 100%);
+  backdrop-filter: blur(1.5px);
+  bottom: 0;
+  left: 0;
+}
+
+.content {
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.bgTagImg:nth-child(3) {
+  position: absolute;
+  top: -5%;
+  left: 0;
+  z-index: 1;
+}
+
+.bgTagImg:nth-child(4) {
+  position: absolute;
+  top: -13%;
+  left: 22%;
+  z-index: 1;
+}
+
+.bgTagImg:nth-child(5) {
+  position: absolute;
+  top: 5%;
+  right: 22%;
+  z-index: 1;
+}
+
+.bgTagImg:nth-child(6) {
+  position: absolute;
+  top: -5%;
+  right: 2%;
+  z-index: 1;
+}
+
+@media only screen and (max-width: 480px) {
+  .btn {
+    font-size: 11px;
+    padding: 6px 16px;
+  }
+}

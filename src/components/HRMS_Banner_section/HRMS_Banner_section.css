@@ -1,0 +1,63 @@
+.banner_bg {
+    background-image: url('/HRMS/banner_team_bg.webp');
+    background-position: 100% 65%;
+    background-repeat: no-repeat;
+    background-size: 64%;
+}
+
+.banner_content {
+    width: 100%;
+    font-size: 42px;
+    line-height: 52px;
+    margin-bottom: 40px;
+}
+
+.action_demo_btn {
+    background-color: #5BBC2E;
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 8px;
+    padding: 14px 24px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+.action_demo_btn:hover {
+    background-color: #FFF;
+    color: #5BBC2E;
+    font-size: 20px;
+    border: 2px solid #5BBC2E;
+    transition: all 0.3s ease-in-out;
+}
+
+@media (min-width: 360px) and (max-width: 400px) {
+    .banner_content {
+        width: 50%;
+        font-size: 18px;
+        line-height: 28px;
+        margin-bottom: 0px;
+    }
+
+    .action_demo_btn {
+        font-size: 14px;
+        border-radius: 4px;
+        padding: 12px 20px;
+    }
+}
+
+@media (min-width: 401px) and (max-width: 480px) {
+    .banner_content {
+        width: 50%;
+        font-size: 20px;
+        line-height: 32px;
+        margin-bottom: 0px;
+    }
+}
+
+@media (min-width: 360px) and (max-width: 480px) {
+    .banner_bg {
+        background-size: cover;
+        overflow: hidden;
+    }
+}

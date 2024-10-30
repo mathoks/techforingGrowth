@@ -1,0 +1,42 @@
+{
+  "name": "ccsp-workwise",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start -p 3003",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/lab": "^6.0.0-beta.9",
+    "@mui/material": "^6.0.2",
+    "@splidejs/react-splide": "^0.7.12",
+    "@splidejs/splide-extension-auto-scroll": "^0.5.3",
+    "@tanstack/react-query": "^5.55.4",
+    "autoprefixer": "10.4.14",
+    "intl-tel-input": "^18.2.1",
+    "lucide-react": "^0.445.0",
+    "next": "^14.0.2-canary.6",
+    "postcss": "8.4.26",
+    "react": "18.2.0",
+    "react-bitrix24-form": "^1.0.4",
+    "react-calendly": "^4.3.1",
+    "react-circular-progressbar": "^2.1.0",
+    "react-dom": "18.2.0",
+    "react-helmet": "^6.1.0",
+    "react-icons": "^4.10.1",
+    "react-slick": "^0.29.0",
+    "react-text-transition": "^3.1.0",
+    "slick-carousel": "^1.8.1",
+    "swiper": "^11.1.12"
+  },
+  "devDependencies": {
+    "daisyui": "^3.2.1",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.5",
+    "tailwindcss": "^3.3.6"
+  }
+}

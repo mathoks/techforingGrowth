@@ -1,0 +1,95 @@
+.title {
+  color: var(--dark-text-2);
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 48px;
+  width: 60%;
+  text-align: center;
+  margin: auto;
+  margin-top: 96px;
+}
+
+.title span {
+  color: #5bbc5b;
+}
+
+.subTitle {
+  color: rgba(0, 0, 0, 0.30);
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  line-height: normal;
+  width: 100%;
+  padding: 12px 0;
+  text-align: center;
+  transition: all .3s ease-in-out;
+  position: relative;
+}
+
+.subTitle:hover {
+  color: var(--dark-text-2)
+}
+
+.subTitle.active {
+  color: var(--dark-text-2);
+}
+
+.subTitle::after {
+  transition: all .3s ease-in-out;
+  content: '';
+  height: 100%;
+  width: 4px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  background: var(--primary);
+}
+
+.subTitle.active::after {
+  opacity: 1;
+}
+
+.horizontalLine {
+  position: absolute;
+  width: 4px;
+  height: calc(100% - 48px);
+  left: 24px;
+  top: 24px;
+  background: #0000001c;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1 0 0;
+  align-self: stretch;
+  border-radius: 12px;
+  background: #F9F9F9;
+  overflow: hidden;
+}
+
+.c_subTitle {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: normal;
+  background: var(--LG-3);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.c_description {
+  color: var(--dark-text-2);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+}
+
+.c_imgArea {
+  position: relative;
+  min-width: 317px;
+  height: 100%;
+}

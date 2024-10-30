@@ -1,0 +1,34 @@
+.main_faq{
+    overflow: hidden;
+}
+.main_faq{
+    transition: all 0.3s ease-out;
+}
+.faq_head,
+.sub_faq_head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease-out;
+}
+.faq_head{
+    transition: all 0.3s ease-out;
+}
+.faq_arrow,
+.sub_faq_arrow{
+    transform: rotate(0deg);
+    transition: all 0.3s ease-out;
+}
+.faq_arrow.F_accordion,
+.sub_faq_arrow.sub_F_accordion{
+    transform: rotate(180deg);
+ }
+.categories,
+.sub_categories{
+    height: 0;
+    transition: all 0.3s ease-out;
+}
+.categories.F_accordion,
+.sub_categories.sub_F_accordion{
+    height: 100%;
+}

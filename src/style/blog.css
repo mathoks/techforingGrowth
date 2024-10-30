@@ -1,0 +1,36 @@
+.post-container h1 , h2{
+    font-weight: bold;
+    font-size: 28px;
+    margin: 5px 0px;
+    }
+    
+    .post-container p{
+        padding: 10px 0px;
+    }
+    .post-container ul{
+        list-style: disc;
+        padding: 5px 30px;
+    }
+    .post-container ol{
+        list-style: decimal;
+        padding: 5px 30px;
+    }
+    .post-container li{
+        padding: 4px;
+    }
+    
+    @media screen and (max-width: 600px) {
+        .post-container h1 , h2{
+            font-size: 24px;
+            }
+    }
+    
+    /* custom scrollbar style on single blog view Page */
+    .custom-scrollbar-style::-webkit-scrollbar {
+        width: 6px
+      }
+    
+      ::-webkit-scrollbar-thumb {
+        /* background: linear-gradient(transparent, var(--secondary)); */
+        border-radius: 6px;
+      }

@@ -1,0 +1,17 @@
+ul .list_element{
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+ul .list_element::before{
+   position: absolute;
+   content: "";
+   top: 50%;
+   right: 0;
+   width: 1px;
+   height: 70%;
+   transform: translateY(-50%);
+   background: #01746D;
+}
+ul .list_element:nth-child(9)::before{
+    background: none; 
+}

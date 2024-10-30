@@ -1,0 +1,94 @@
+/* routing pages list section */
+
+.pages_list_finance {
+    position: sticky;
+    top: 75px;
+    border-radius: 8px;
+    background-color: #FFF;
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.20);
+    z-index: 30;
+    transition: all 0.3s ease-in-out;
+}
+
+.route_list_finance {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.route_list_finance li {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.sub_route_list_finance {
+    position: absolute;
+    top: 50%;
+    right: -2px;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 70%;
+    background: conic-gradient(from -47deg at 70.61% 68.88%, rgba(76, 87, 107, 0.10) 0deg, rgba(0, 0, 0, 0.14) 360deg), linear-gradient(0deg, rgba(0, 61, 61, 0.70) 0%, rgba(0, 61, 61, 0.70) 100%), linear-gradient(143deg, #182F59 25.94%, #020F26 85.35%);
+    opacity: 0.6;
+    transition: all 0.3s ease-in-out;
+}
+
+.route_list_finance li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.route_list_finance li.active {
+    background: conic-gradient(from -69deg at 70.61% 68.88%, rgba(76, 87, 107, 0.10) 0deg, rgba(0, 0, 0, 0.14) 360deg), linear-gradient(0deg, rgba(0, 61, 61, 0.70) 0%, rgba(0, 61, 61, 0.70) 100%), linear-gradient(143deg, #182F59 25.94%, #020F26 85.35%) !important;
+}
+
+;
+
+.route_image_finance {
+    transform: scale(1);
+    transition: all 0.3s ease-out;
+}
+
+.route_list_finance li:hover .sub_route_list_finance {
+    width: 2px;
+}
+
+.route_list_finance li.active .sub_route_list_finance {
+    background: transparent;
+}
+
+.route_list_finance li:hover .route_image_finance {
+    transform: scale(1.3);
+}
+
+.route_list_finance li:nth-child(8) .sub_route_list_finance {
+    background: transparent;
+}
+
+.route_list_finance li p {
+    background: conic-gradient(from -47deg at 70.61% 68.88%, rgba(76, 87, 107, 0.10) 0deg, rgba(0, 0, 0, 0.14) 360deg), linear-gradient(0deg, rgba(0, 61, 61, 0.70) 0%, rgba(0, 61, 61, 0.70) 100%), linear-gradient(143deg, #182F59 25.94%, #020F26 85.35%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 400;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.route_list_finance li p.active {
+    background: none;
+    -webkit-text-fill-color: #FFF;
+    transform: translateX(6px);
+}
+
+.route_list_finance li:hover p {
+    transform: translateX(6px);
+}

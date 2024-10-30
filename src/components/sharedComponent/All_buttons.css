@@ -1,0 +1,26 @@
+/* all banner btn  */
+.banner_btns{
+    color: #FAFAFA;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding: 16px 24px;
+    border-radius: 8px;
+    background: #5BBC2E;
+    border: 2px solid transparent;
+    transition: all 0.3s ease-in;
+}
+.banner_btns:hover{
+    background-color: transparent;
+    color: #5BBC2E;
+    border: 2px solid #5BBC2E;
+}
+
+@media (max-width: 768px) {
+    .banner_btns {
+        font-size: 18px;
+        font-weight: 500;
+        padding: 5px 10px;
+    }
+}
