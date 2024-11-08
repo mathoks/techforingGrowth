@@ -18,7 +18,7 @@ const PriceTableScroll = forwardRef(
     ref
   ) => {
     const [combine_product, setComBinedProduct] = useState({});
-    console.log(dynamicURL, tabId, singleProduct, "here");
+    
 
     useEffect(() => {
       const fetchData = async () => {

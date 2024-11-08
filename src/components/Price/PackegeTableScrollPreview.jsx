@@ -64,10 +64,10 @@ const PackegeTableScrollPreview = forwardRef(({productData,setCurrentIndex, sing
                 <button> <ChevronUpIcon  style={{transform : showDiv ? "rotate(180deg)" : "rotate(-360deg)",  transition: "transform 0.3s ease-in-out"  } } onClick={handleAccordion} className='text-[#0F93B1] text-xl'/></button>
             </div>
             { showDiv && ( <table className='w-full border-separate border-spacing-y-4 table-fixed '>
-                <thead className='sticky top-[150px] z-20 bg-white'>
+                <thead className='sticky top-[150px] z-20 bg-white '>
                 <tr>
-                  { singleProduct?.product_packages?.map(({package:pack_})=> 
-                        <th className='p-2 text-center'>
+                  { singleProduct?.product_packages?.filter(({activated})=> activated ).map(({package:pack_})=> 
+                        <th className='p-2 text-center flex-col flex-grow w-full'>
                             <div className='flex flex-col items-center border-[0.8px] border-[#0F93B1] rounded-sm p-2 h-40 '>
                                 <div className='transform -rotate-90 h-full flex flex-col justify-center '>
                                     <h2 className='text-lg font-medium text-[#0F93B1] whitespace-nowrap w-auto'>{pack_}</h2>
