@@ -3,7 +3,7 @@ import { ChevronUpIcon , CircleAlert, Minus, Check} from 'lucide-react'
 import React, { forwardRef, useEffect, useState } from 'react'
 // import CheveronUp from "../../../public/ChevronUpOutline.svg"
 
-const PackegeTableScrollPreview = forwardRef(({productData, singleProduct = null ,currentIndex, setSingleProduct, availableProduct, tabId, dynamicURL, setIsLoading, scrollToDiv}, ref) => {
+const PackegeTableScrollPreview = forwardRef(({productData,setCurrentIndex, singleProduct = null ,currentIndex, setSingleProduct, availableProduct, tabId, dynamicURL, setIsLoading, scrollToDiv}, ref) => {
     
   const [showDiv, setCollapseAcordion] = useState(true)
  
@@ -40,15 +40,15 @@ const PackegeTableScrollPreview = forwardRef(({productData, singleProduct = null
        
       }, [tabId, dynamicURL]);
 
-    const Images = Array.isArray(productData) && productData.length > 0 ? productData.map(({images})=>images[0]) : ""
+    const Images = Array.isArray(availableProduct) && availableProduct.length > 0 ? availableProduct.map(({images})=>images[0]) : ""
     const [Name, StyleName] = productData?.length > 0 ? productData[currentIndex]?.name.split(" ") : ["", " "]
   return (
     typeof singleProduct !== 'undefined'  ? (
     <div ref={ref} className='mt-10'>
       <div>
         <div  className='flex justify-start mx-4 items-center overflow-x-auto sticky top-[42px] z-40 border-b-[0.5px] border-[#0F93B1] bg-white '>
-           { Array.isArray(Images) ? Images.map((src)=> <div className='cursor-pointer px-3 sm:px-4 lg:px-6 py-2 sm:py-3 flex-shrink-0 ' style={{borderTop: "0.5px solid rgb(15, 147, 177)", borderRight: "0.5px solid rgb(15, 147, 177)", borderBottom: "none", borderLeft: "0.5px solid rgb(15, 147, 177)" , borderImage: "initial", borderRadius: "20px 20px 0px 0px" , background: "transparent", minWidth: "fit-content", marginRight: "-1px"}}>
-                <img onClick={()=>console.log("yes")} src={src} className='w-[60px] sm:w-[80px] lg:w-[112px] h-[18px] sm:h-[24px] lg:h-[32px] object-contain' alt='Tab 0'/>
+           { Array.isArray(Images) ? Images.map((src, index)=> <div className='cursor-pointer px-3 sm:px-4 lg:px-6 py-2 sm:py-3 flex-shrink-0 ' style={{borderTop: "0.5px solid rgb(15, 147, 177)", borderRight: "0.5px solid rgb(15, 147, 177)", borderBottom: "none", borderLeft: "0.5px solid rgb(15, 147, 177)" , borderImage: "initial", borderRadius: "20px 20px 0px 0px" , background: "transparent", minWidth: "fit-content", marginRight: "-1px"}}>
+                <img onClick={()=>setCurrentIndex(index)} src={src} className='w-[60px] sm:w-[80px] lg:w-[112px] h-[18px] sm:h-[24px] lg:h-[32px] object-contain' alt='Tab 0'/>
             </div>)
            : ""}
         </div>
