@@ -3982,3 +3982,90 @@ animation for the efficient client management section */
 .hide-scrollbar::-webkit-scrollbar {
   display: none;  /* Chrome, Safari and Opera */
 }
+
+
+/* .splide__list {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-self: center;
+  padding: 0;
+  margin: 0;
+  background-color: #01746D;
+  width: "100%";
+  gap: '10px';
+  box-sizing:  content-box;
+} */
+
+/* .splide__track {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+   */
+
+
+/* .splide__list {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: start;
+  align-items: baseline;
+ 
+  margin: 8px;
+  width: 200%;
+} */
+
+/* .splide__slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+/* .splide__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.splide__arrow--prev {
+  left: 10px;
+}
+
+.splide__arrow--next {
+  right: 10px;
+} */
+
+/* .splide__pagination .active{
+  position: absolute;
+  bottom: '10px';
+  left: 50%;
+  transform: translateX(-50%);
+  color: #2e62a9;
+} */
+
+.splid:not(.is-overflow) .splide__list{
+  justify-content: center;
+
+}
+
+.splid:not(.is-overflow) .splide__slide:last-child{
+  margin: 0 !important;
+  
+}
+
+ @media only screen and (max-width: 375px) {
+  .splide__list {
+   
+    padding-inline-start: 8px;
+  }
+} 

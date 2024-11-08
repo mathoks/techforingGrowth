@@ -1,31 +1,33 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, } from "react";
 import Header from "@/components/Header";
 import HeroSlider from "@/components/Price/HeroSlider";
 import EveryPurchase from "@/components/Price/EveryPurchase";
-import PricingTabs from "@/components/Price/Tab/PricingTabs";
-import PriceTable from "@/components/Price/PriceTable";
+// import PricingTabs from "@/components/Price/Tab/PricingTabs";
+// import PriceTable from "@/components/Price/PriceTable";
 import MidCTA from "@/components/Price/MidCTA";
 import OnPremisesSection from "@/components/Price/OnPremisesSection";
 import FooterCTA from "@/components/Price/Tab/FooterCTA";
 import Accordion_component from "@/components/Accordion_component/Accordion_component";
 import { getPriceFaq } from "@/utils/price";
-import PriceTableMobile from "@/components/Price/PriceTableMobile";
-import PackegeTableForMobile from "@/components/Price/PackegeTableForMobile";
+// import PriceTableMobile from "@/components/Price/PriceTableMobile";
+// import PackegeTableForMobile from "@/components/Price/PackegeTableForMobile";
 import PriceTableScroll from "@/components/Price/Tab/PriceTableScroll";
-import TestTable from "@/components/Price/Tab/TestTable";
+// import TestTable from "@/components/Price/Tab/TestTable";
 import { Stack } from "@mui/system";
 import { CircularProgress } from "@mui/material";
-import PricingTableTab from "@/components/Price/Tab/PricingTableTab";
-import PackegeTableScroll from "@/components/Price/PackegeTableScroll";
+// import PricingTableTab from "@/components/Price/Tab/PriceTableScroll";
+// import PackegeTableScroll from "@/components/Price/PackegeTableScroll";
 import PricingTabPreview from "@/components/Price/Tab/PricingTabdPreview";
 import PackegeTableScrollPreview from "@/components/Price/PackegeTableScrollPreview";
+import Footer from "@/components/Footer";
 
 function Page() {
   const [singleProduct, setSingleProduct] = useState({});
   const divRef = useRef(null);
+  const [payMethod, setPayMethod] = useState("Monthly")
   const [activePlan, setActivePlan] = useState("");
-  const [selectedCurrency, setSelectedCurrency] = useState("");
+  const [selectedCurrency, setSelectedCurrency] = useState();
   const [value, setValue] = useState(0);
   const [productData, setProductData] = useState([]);
   const [faqData, setFaqData] = useState([]);
@@ -46,8 +48,11 @@ function Page() {
 
     return () => window.removeEventListener("resize", checkIfMobile);
   }, []);
+ 
 
-  const tabId = singleProduct?.id;
+  
+
+  const tabId =  singleProduct?.id ;
   const dynamicURL = singleProduct?.identifier
     ? "combine_product"
     : "product_id";
@@ -66,7 +71,8 @@ function Page() {
 
         const data = await res.json();
         setProductData(data);
-        setValue(productData[0]?.id);
+        setSingleProduct(data[currentIndex])
+        setValue(tabId)
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
@@ -105,7 +111,7 @@ function Page() {
   };
   const availableProduct = productData.filter((item) => item.is_published);
   return (
-    <>
+    <div className="">
       {/* <Header pathName={"/pricing"} /> */}
       {isLoading ? (
         <div className="h-screen flex justify-center items-center">
@@ -135,6 +141,8 @@ function Page() {
               productData={productData}
               value={value}
               setValue={setValue}
+              payMethod={payMethod}
+              setPayMethod={setPayMethod}
               dynamicURL={dynamicURL}
               tabId={tabId}
               activePlan={activePlan}
@@ -144,6 +152,7 @@ function Page() {
               availableProduct={availableProduct}
               currentIndex={currentIndex}
               setCurrentIndex={setCurrentIndex}
+              
             />
           ) : (
             ""
@@ -166,6 +175,7 @@ function Page() {
               value={value}
               setValue={setValue}
               dynamicURL={dynamicURL}
+              payMethod={payMethod}
               tabId={tabId}
               activePlan={activePlan}
               setActivePlan={setActivePlan}
@@ -175,6 +185,8 @@ function Page() {
               currentIndex={currentIndex}
               setCurrentIndex={setCurrentIndex}
               ref={divRef}
+              setIsLoading={setIsLoading}
+              singleProduct= {singleProduct}
               />
             ) : (
               <div>
@@ -183,13 +195,16 @@ function Page() {
                   selectedCurrency={selectedCurrency}
                   ref={divRef}
                   dynamicURL={dynamicURL}
+                  payMethod={payMethod}
                   tabId={tabId}
-                  // selectedCurrency={selectedCurrency}
+                  singleProduct={singleProduct}
+                  setSingleProduct={setSingleProduct}
+                  setIsLoading= {setIsLoading}
                 />
               </div>
             ))}
 
-          <MidCTA dynamicURL={dynamicURL} tabId={tabId} />
+          <MidCTA dynamicURL={dynamicURL} tabId={tabId} availableProduct={availableProduct} />
           {/* <PackegeTableForMobile
             dynamicURL={dynamicURL}
             tabId={tabId}
@@ -198,7 +213,7 @@ function Page() {
           /> */}
 
           <OnPremisesSection dynamicURL={dynamicURL} tabId={tabId} />
-          <FooterCTA dynamicURL={dynamicURL} tabId={tabId} />
+          <FooterCTA dynamicURL={dynamicURL} tabId={tabId} currentIndex = {currentIndex} />
           <div className="mt-[60px]">
             {faqLoading ? (
               <p>Loading FAQ...</p>
@@ -208,9 +223,10 @@ function Page() {
               <Accordion_component accordion_list={faqData} tabId={value} />
             )}
           </div>
+          <Footer/>
         </>
       )}
-    </>
+    </div>
   );
 }
 
