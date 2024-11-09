@@ -18,6 +18,13 @@ const PriceTableScroll = forwardRef(
     ref
   ) => {
     const [combine_product, setComBinedProduct] = useState({});
+    // style={{transform : showDiv ? "rotate(180deg)" : "rotate(-360deg)",  transition: "transform 0.3s ease-in-out"  } }  className='text-[#0F93B1] text-xl'
+    const [showDiv, setCollapseAcordion] = useState(true)
+
+    const handleAccordion = ()=>{
+      setCollapseAcordion((prev)=> !prev)
+     }
+
     
 
     useEffect(() => {
@@ -45,15 +52,15 @@ const PriceTableScroll = forwardRef(
       fetchData();
     }, [tabId, dynamicURL]);
 
-    console.log(combine_product);
-    const [Name, styledName] =
+    
+    const [Name, styledName ] =
       Object.keys(singleProduct).length === 0
         ? []
         : singleProduct.name.split(" ");
     const [Name2, styledName2] =
       Object.keys(combine_product).length === 0
         ? ["", " "]
-        : combine_product.name.split(" ", 3);
+        : combine_product.name.split(" ", 1);
 
     return (
       <div ref={ref} className="main_container mb-4">
@@ -66,8 +73,8 @@ const PriceTableScroll = forwardRef(
         <div className="w-full border-[#0F93B1] border-[0.5px] flex bg-[#EEF4FD] sticky top-[75px] z-40 ">
           <div className="w-[33.33%] flex flex-col text-center items-center justify-center border-r border-[#0F93B1] p-6">
             <h2 className="text-[#0F93B1] text-lg md:text-[28px] font-medium">
-              {Name2}{" "}
-              <span className="text-primary capitalize">{styledName2}</span>
+              {Name}{" "}
+              <span className="text-primary capitalize"> {Object.keys(combine_product).length > 0 ? styledName + 'Combine' : styledName} </span>
             </h2>
             <h3 className="text-[#0F93B1] text-sm md:text-lg font-medium">
               Includes the Following
@@ -101,7 +108,7 @@ const PriceTableScroll = forwardRef(
         </div>
         {Object.keys(singleProduct).length > 0 &&
         !Object.keys(singleProduct).includes("products") ? (
-          <div>
+          <div >
             <div className="bg-[#EEF4FD] border-b-[0.8px] border-[#C1C1C1] border-t-2 border-t-white cursor-pointer mt-1 w-full text-center items-center flex justify-center sticky top-[213px] z-20">
               <div className="w-full flex ">
                 <div className="flex  items-center gap-2 w-1/3 border-r border-[#C1C1C1] px-2 py-2">
@@ -122,18 +129,20 @@ const PriceTableScroll = forwardRef(
                   {singleProduct?.short_description}
                   <div>
                     <ChevronUpIcon
+                     style={{transform : showDiv ? "rotate(180deg)" : "rotate(-360deg)",  transition: "transform 0.3s ease-in-out"  } } 
                       className="w-[24px] h-[24px] text-dark-text-3"
                       height={"1em"}
                       width={"1em"}
+                      onClick={handleAccordion}
                     />
                   </div>
                 </div>
               </div>
             </div>
-            <div className="flex justify-center items-center bg-gray-100">
+            <div  className="flex justify-center items-center bg-gray-100">
               <div className="w-full overflow-auto">
-                <table className="w-full bg-white overflow-hidden">
-                  <tbody>
+               <table   className="w-full bg-white overflow-hidden">
+               { showDiv &&   <tbody data-tabeId = 'main-0'>
                     {singleProduct?.features?.map(
                       (
                         { feature, value, product_packages, product: prodId },
@@ -177,6 +186,7 @@ const PriceTableScroll = forwardRef(
                       )
                     )}
                   </tbody>
+               }
                 </table>
               </div>
             </div>
