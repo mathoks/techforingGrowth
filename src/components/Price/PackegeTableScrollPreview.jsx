@@ -56,7 +56,7 @@ const PackegeTableScrollPreview = forwardRef(({productData,setCurrentIndex, sing
             <div className='bg-[#EEF4FD] p-1 flex items-center justify-between mx-2 pt-2 sticky top-[78px] z-30 '>
                 <div>
                     <div className='flex items-center gap-2 px-3'>
-                        <img className='w-5 h-5' src={productData[currentIndex].images[productData[currentIndex]?.images?.length - 1]}/>
+                        <img className='w-5 h-5' src={productData[currentIndex]?.images[productData[currentIndex]?.images?.length - 1]}/>
                         <h2 className='text-base font-medium text-[#0F93B1]'>{Name} <span className='text-primary capitalize'>{StyleName}</span></h2>
                     </div>
                     <h2 className=' text-xs md:text-lg  my-3 px-3'>{productData[currentIndex]?.short_description}</h2>

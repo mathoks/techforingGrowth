@@ -28,7 +28,7 @@ const HeroSlider = ({ dynamicURL, tabId }) => {
     fetchData();
   }, [dynamicURL, tabId]);
 
-  //   setInterval(changeBackground, transitionDelay);
+  
 
   return (
     <div

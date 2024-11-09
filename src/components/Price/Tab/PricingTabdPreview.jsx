@@ -204,7 +204,7 @@ const PricingTabPreview = ({
               </div>
             </div>
             <div className="main_container  hide-scrollbar mx-auto overflow-auto px-4 md:px-0 w-[100%] ">
-              <div className="relative py-4 mb-4 flex-col w-full bg-white">
+              <div className="relative py-4 mb-4 flex-col w-full">
                 {/* <div className="  max-w-[1240px]  mx-auto px-20 xs:px-2.5 lg:px-0 ls:px-20 sp:px-10  sm:px-0 h-fit relative"> */}
                 <div className="mx-auto overflow-scroll hide-scrollbar">
                   <Splide
