@@ -112,7 +112,7 @@ function Page() {
   const availableProduct = productData.filter((item) => item.is_published);
   return (
     <div className="">
-      {/* <Header pathName={"/pricing"} /> */}
+      <Header pathName={"/pricing"} />
       {isLoading ? (
         <div className="h-screen flex justify-center items-center">
           {" "}
