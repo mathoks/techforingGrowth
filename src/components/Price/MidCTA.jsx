@@ -6,7 +6,7 @@ import MapIcon from '../../../public/icons/MapIcon'
 
 const MidCTA = ({availiableProduct}) => {
   return (
-    <div>MID CTA HERE</div>
+    <div className='main_container'>MID CTA HERE</div>
     // <div className='custom-container'>
     //     <section className='flex flex-col md:gap-24 gap-10 md:mb-24 mb-10'>
     //     <div className='w-full lg:max-w-[1200px] mx-auto flex flex-col gap-24'>

@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import HeroSlider from "@/components/Price/HeroSlider";
 import EveryPurchase from "@/components/Price/EveryPurchase";
 // import PricingTabs from "@/components/Price/Tab/PricingTabs";
-// import PriceTable from "@/components/Price/PriceTable";
+//  import PriceTable from "@/components/Price/PriceTable";
 import MidCTA from "@/components/Price/MidCTA";
 import OnPremisesSection from "@/components/Price/OnPremisesSection";
 import FooterCTA from "@/components/Price/Tab/FooterCTA";
@@ -112,7 +112,7 @@ function Page() {
   const availableProduct = productData.filter((item) => item.is_published);
   return (
     <div className="">
-      {/* <Header pathName={"/pricing"} /> */}
+      <Header pathName={"/pricing"} />
       {isLoading ? (
         <div className="h-screen flex justify-center items-center">
           {" "}

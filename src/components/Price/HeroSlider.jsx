@@ -1,7 +1,7 @@
 "use client";
 import { getPriceSlider } from "@/utils/price";
 import { priceHeroSliderOption } from "@/utils/sliderOptions";
-import { Slide } from "@mui/material";
+
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import React, { useEffect, useState } from "react";
 
@@ -28,8 +28,6 @@ const HeroSlider = ({ dynamicURL, tabId }) => {
     fetchData();
   }, [dynamicURL, tabId]);
 
-  
-
   return (
     <div
       className="relative w-full h-[400px] md:h-[400px] overflow-hidden items-center justify-center"
@@ -42,14 +40,19 @@ const HeroSlider = ({ dynamicURL, tabId }) => {
         <Splide
           aria-labelledby="autoplay-hero-heading"
           options={{
-            ...priceHeroSliderOption,
-            onMoved: (newIndex) => setCurrentIndexx(newIndex),
+             autoplay: true,    
+             ...priceHeroSliderOption,
           }}
+          className="py-4"
+          onMoved={(newIndex) => setCurrentIndexx(newIndex)}
         >
           {data.length > 0 &&
             !loading &&
             data.map(({ title, sub_title, button_text }, id) => (
-              <SplideSlide key={id} className=" flex flex-col items-center justify-center -z-50">
+              <SplideSlide
+                key={id}
+                className=" flex flex-col items-center justify-center -z-50"
+              >
                 <div
                   key={id}
                   className="relative w-full  h-20 md:h-[70px] mb-4 md:mb-0 "

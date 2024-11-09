@@ -78,16 +78,16 @@ export const resourcesHeroSliderOption = {
 
 export const priceHeroSliderOption = {
   autoplay: true,
-  type: "loop",
-  gap: "1rem",
+  type: "slide",
+  gap: 0,
   drag: "free",
-
+ focus: 'center',
   pauseOnHover: false,
   resetProgress: true,
   perPage: 1,
   interval: 3000,
   pagination: false,
-  speed: 0,
+    height: '100%',
   arrows: false,
   easing: "cubic-bezier(0.25, 1, 0.5, 1)",
   cover: true,
@@ -141,8 +141,9 @@ export const paginationSliderOption = {
             perMove: 1,
             focus: 'center',
             pagination: false,
-            snap:true,
-            autoWidth: true,
+        
+            width: '60%',
+            arrows: false,
         
             
         },
@@ -153,21 +154,24 @@ export const paginationSliderOption = {
             resetProgress: false,
             perPage: 3,
             perMove: 1,
+            arrows: false, 
             focus: 'center',
             pagination: true,
-            autoWidth: true,
+            
             
         },
         768: {
-            gap: '1rem',
+            gap: '6rem',
             rewind: false,
             resetProgress: false,
-            perPage: 2,
+            perPage: 1,
             perMove: 1,
             focus: 'center',
-            pagination: 'true',
+            pagination: true,
             height: '40rem',
-            width: "100%"
+             width: "280px"
+           
+
             
         },
         580: {
@@ -178,9 +182,10 @@ export const paginationSliderOption = {
             perMove: 1,
             gap: '6rem',
             focus: 'center',
+             width: "260px"
         },
-        420: {
-            gap: '1rem',
+        425: {
+            gap: '2rem',
             rewind: false,
             resetProgress: false,
             perPage: 1,
@@ -188,7 +193,8 @@ export const paginationSliderOption = {
             focus: 'center',
             pagination: 'true',
             // height: '40rem',
-             width: '90%',
+            
+              width: "260px"
              
              
         },
@@ -201,6 +207,7 @@ export const paginationSliderOption = {
             perMove: 1,
             focus: 'center',
             pagination: 'true',
+             width: "380px"
             
             
 

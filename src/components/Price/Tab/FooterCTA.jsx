@@ -13,7 +13,7 @@ const FooterCTA = memo(({dynamicURL, tabId}) => {
   // }, [tabId, dynamicURL, currentIndex])
   
   return (
-    <div>FooterCTA</div>
+    <div className='mx-auto'>FooterCTA</div>
   )
 })
 

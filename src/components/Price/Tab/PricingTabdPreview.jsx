@@ -203,15 +203,15 @@ const PricingTabPreview = ({
                 </p>
               </div>
             </div>
-            <div className="main_container  hide-scrollbar mx-auto overflow-auto px-4 md:px-0 w-[100%] ">
-              <div className="relative py-4 mb-4 flex-col w-full">
+            <div className=" hide-scrollbar mx-auto o px-4 md:px-0  w-[100%]">
+              <div className="relative py-4 mb-4 flex-col w-full mx-auto justify-center">
                 {/* <div className="  max-w-[1240px]  mx-auto px-20 xs:px-2.5 lg:px-0 ls:px-20 sp:px-10  sm:px-0 h-fit relative"> */}
-                <div className="mx-auto overflow-scroll hide-scrollbar">
+                {/* <div className=" hide-scrollbar"> */}
                   <Splide
                     options={{
-                      focus: 0,
+                    
                       omitEnd: true,
-                      // autoWidth: true,
+            
                       ...paginationSliderOption,
                       pagination: {
                         className: "flex justify-center mb-4",
@@ -222,7 +222,7 @@ const PricingTabPreview = ({
                     style={{ ...paginationStyle2 }}
                     onMoved={(_, newIndex) => setActiveIndex(newIndex)}
                     onDragged={(_, newIndex) => setActiveIndex(newIndex)}
-                    className=" hide-scrollbar w-fit   item-center  mx-auto   mb-4 md:mb-0  md:px-28 lg:pl-[0px]  lg:align-middle "
+                    className=" hide-scrollbar  justify-center md:px-4  mx-auto  mb-4 md:mb-0 "
                   >
                     {/* <div className="splide__arrows">
                       <div className="splide__arrow splide__arrow--prev rotate-90 flex items-center rounded-none -inset-x-12 w-32 bg-orange-400 justify-between ">
@@ -264,7 +264,7 @@ const PricingTabPreview = ({
                           // style={{display: 'flex', overflowX: 'scroll', scrollbarWidth: 'none', scrollSnapType: 'x mandatory'}}
                           // className="border-2   space-y-5 flex flex-col justify-center items-center "
                           key={index}
-                          className={`border inline-flex items-center space-y-4 rounded-md flex-col grow-0 shrink min-w-[260px] w-[calc(25%-2px)]  pt-20 justify-center px-2 py-4 mt-5 max-w-sm md:w-[calc(25%-16px)] ${
+                          className={` border inline-flex items-center space-y-4 rounded-md flex-col grow-0 shrink min-w-[240px] w-[calc(25%-2px)]  pt-20 justify-center px-2 py-4 mt-5 max-w-sm md:w-[calc(25%-16px)] ${
                             index % 2 === 0
                               ? "even:h-[40rem]  even:mt-10"
                               : "odd:h-[45rem]"
@@ -480,7 +480,7 @@ const PricingTabPreview = ({
         </div>
         {/* </div> */}
       </div>
-    </div>
+    // </div>
   );
 };
 

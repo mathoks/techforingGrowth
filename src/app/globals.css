@@ -4005,6 +4005,7 @@ animation for the efficient client management section */
   align-items: center;
   padding: 0;
   margin: 0;
+  background-color: #01746D;
 }
    */
 
@@ -4016,7 +4017,8 @@ animation for the efficient client management section */
   align-items: baseline;
  
   margin: 8px;
-  width: 200%;
+  width: fit-content;
+  background-color: #01746D;
 } */
 
 /* .splide__slide {

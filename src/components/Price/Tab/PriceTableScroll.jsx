@@ -56,7 +56,7 @@ const PriceTableScroll = forwardRef(
         : combine_product.name.split(" ", 3);
 
     return (
-      <div ref={ref} className="main_container mb-4 ">
+      <div ref={ref} className="main_container mb-4">
         <div className="text-center md:pt-16 md:pb-9">
           <h2 className="text-secondary-1 text-2xl md:text-4xl font-bold">
             Compare All Plans With{" "}
