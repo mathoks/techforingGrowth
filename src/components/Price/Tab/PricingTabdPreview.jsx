@@ -36,21 +36,18 @@ export const PriceView = memo(({ currency, paymentMethods = [], method }) => {
   if (!priceDetails) return;
 
   const price = {
-    Monthly:
-      currency === "USD"
-        ? "$" + priceDetails.price + "/" + "mo"
-        : "&" + priceDetails.price + "/" + "mo",
-    Yearly:
-      currency === "USD"
-        ? "$" + priceDetails.price + "/" + "year"
-        : "&" + priceDetails.price + "/" + "year",
-    Quarterly:
-      currency === "USD"
-        ? "$" + priceDetails.price + "/" + "quarterly"
-        : "&" + priceDetails.price + "/" + "quarterly",
-  }[method];
-
-  return <div className=" font-bold ">{price}</div>;
+      Monthly: priceDetails.price + "/" + "mo",
+      Yearly: priceDetails.price + "/" + "year",
+      Quarterly: priceDetails.price + "/" + "quarterly"
+          
+    }[method];
+  
+    if(currency === "USD") {
+    return <div className=" font-bold first-letter:text-sm"><span>$</span>{price}</div>;
+    }
+    else if(currency === "BDT")
+    return <div className=" font-bold first-letter:text-sm"><span>&</span>{price}</div>
+    else return <div className=" font-bold">{ price}</div>
 });
 
 const PricingTabPreview = ({
