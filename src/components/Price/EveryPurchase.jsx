@@ -1,8 +1,6 @@
 "use client";
 import React, { memo, useEffect, useState } from "react";
-import { CheckCircleIcon, LightbulbIcon } from "lucide-react";
 import styles from "@/style/pricePurchase.module.css";
-import { fetchFeatures, useFeaturesQuery } from "@/utils/price";
 
 const CompHtml = memo(({ text }) => {
   return (
@@ -50,7 +48,7 @@ const EveryPurchase = memo(({ dynamicURL, tabId }) => {
   }, [tabId, dynamicURL]);
 
   return html.length > 0 ? (
-    <div className="mt-24 lg:block hidden bg-[#EEF4FD] ">
+    <div className="mt-24 lg:block hidden bg-[#EEF4FD] py-12">
       <div className="custom-container pb-11">
         <h1 className={styles.title}>
           With Every Purchase, 
@@ -82,7 +80,7 @@ const EveryPurchase = memo(({ dynamicURL, tabId }) => {
 
             <div className={styles.horizontalLine}></div>
           </div>
-          <div className={`${styles.content} flex justify-between mt-0`}>
+          <div className={`${styles.content} flex justify-between`}>
             <div className="flex flex-col gap-6 ml-14 ">
               <CompHtml text={html[index]?.html_content} />
             </div>

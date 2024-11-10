@@ -1,7 +1,7 @@
 "use client";
 import { ChevronUpIcon, CircleAlert, Minus, Check } from "lucide-react";
 import React, { forwardRef, useEffect, useState } from "react";
-// import CheveronUp from "../../../public/ChevronUpOutline.svg"
+
 
 const PackegeTableScrollPreview = forwardRef(
   (
@@ -34,7 +34,7 @@ const PackegeTableScrollPreview = forwardRef(
         );
       }
     };
- console.log(showCom)
+ 
     useEffect(() => {
       const fetchData = async () => {
         const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;

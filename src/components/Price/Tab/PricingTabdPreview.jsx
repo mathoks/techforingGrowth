@@ -130,6 +130,7 @@ const PricingTabPreview = ({
                   <img
                     className="w-[60px] sm:w-[80px] lg:w-[112px] h-[18px] sm:h-[24px] lg:h-[32px] object-contain"
                     src={images[0]}
+                    alt="image for package"
                   />
                 </div>
               ))

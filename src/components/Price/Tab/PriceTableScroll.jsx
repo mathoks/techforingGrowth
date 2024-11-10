@@ -49,7 +49,7 @@ const PriceTableScroll = forwardRef(
           const data = await res.json();
           if (dynamicURL === "combine_product") {
             setComBinedProduct(data);
-    console.log(combine_product?.clone_products?.find(({name})=> name === "Techforing Human" ))
+
 
           } else setSingleProduct(data);
         } catch (error) {
@@ -66,7 +66,7 @@ const PriceTableScroll = forwardRef(
     }, [tabId, dynamicURL]);
 
    
-    console.log(combine_product?.clone_products?.find(({name})=> name === "Techforing Human" ))
+    
 
     const [Name, styledName ] =
       Object.keys(singleProduct).length === 0
@@ -106,13 +106,13 @@ const PriceTableScroll = forwardRef(
                   <h3 className="text-xs md:text-lg font-medium text-[#0F93B1]">
                     {pack_}
                   </h3>
-                  <p className="text-[10px] md:text-base font-medium text-[#0F93B1]">
+                  <div className="text-[10px] md:text-base font-medium text-[#0F93B1]">
                     <PriceView
                       paymentMethods={payment_methods}
                       currency={selectedCurrency}
                       method={payMethod}
                     />
-                  </p>
+                  </div>
                   <button className="mt-4 bg-primary md:text-sm text-[8px] hover:bg-white hover:text-primary hover:border hover:border-primary text-white py-1 md:py-2 px-2 md:px-4 rounded hover:bg-primary-dark">
                     Buy Now
                   </button>
@@ -210,7 +210,7 @@ const PriceTableScroll = forwardRef(
 
           dynamicURL === "combine_product" && combine_product?.products?.map(({name, short_description, images}, id)=>
             <>
-             <div className={`bg-[#EEF4FD] border-b-[2px] border-t-[4px] border-white cursor-pointer mt-1 w-full text-center items-center flex justify-center sticky z-20 ${id === 0 ? 'top-[213px]' : id===1 ? 'top-[257px]' : 'top[300px]'}`}>
+             <div key={id} className={`bg-[#EEF4FD] border-b-[2px] border-t-[4px] border-white cursor-pointer mt-1 w-full text-center items-center flex justify-center sticky z-20 ${id === 0 ? 'top-[213px]' : id===1 ? 'top-[257px]' : 'top[300px]'}`}>
                   <div className="w-full flex ">
                     <div className="flex  items-center gap-2 w-1/3 border-r border-[#C1C1C1] px-2 py-2">
                       <Image

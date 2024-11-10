@@ -77,17 +77,18 @@ export const resourcesHeroSliderOption = {
 }
 
 export const priceHeroSliderOption = {
+    flickerPower: 800,
   autoplay: true,
-  type: "slide",
+  type: "loop",
   gap: 0,
   drag: "free",
- focus: 'center',
   pauseOnHover: false,
   resetProgress: true,
   perPage: 1,
-  interval: 3000,
+  perMove: 1,
+  interval: 2000,
   pagination: false,
-    height: '100%',
+    // height: '100%',
   arrows: false,
   easing: "cubic-bezier(0.25, 1, 0.5, 1)",
   cover: true,

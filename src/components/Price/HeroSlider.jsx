@@ -1,6 +1,6 @@
 "use client";
 import { getPriceSlider } from "@/utils/price";
-import { priceHeroSliderOption } from "@/utils/sliderOptions";
+import { paginationStyle, priceHeroSliderOption } from "@/utils/sliderOptions";
 
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import React, { useEffect, useState } from "react";
@@ -32,7 +32,7 @@ const HeroSlider = ({ dynamicURL, tabId }) => {
     <div
       className="relative w-full h-[400px] md:h-[400px] overflow-hidden items-center justify-center"
       style={{
-        background: `linear-gradient(0deg, rgb(0, 129, 158) 0%, rgb(0, 129, 158) 100%), url(${data[currentIndex]?.image}) 50% center / cover no-repeat lightgray`,
+        background: `linear-gradient(0deg, rgb(0, 129, 158) 0%, rgb(0, 129, 158) 100%), url(${encodeURIComponent(data[currentIndex]?.image)}) 50% center / cover no-repeat lightgray`,
         backgroundBlendMode: "multiply, luminosity",
       }}
     >
@@ -40,8 +40,9 @@ const HeroSlider = ({ dynamicURL, tabId }) => {
         <Splide
           aria-labelledby="autoplay-hero-heading"
           options={{
-     
-             ...priceHeroSliderOption,
+              autoplay: true,
+              ...priceHeroSliderOption,
+              ...paginationStyle
           }}
           className="py-4"
           onMoved={(newIndex) => setCurrentIndexx(newIndex)}
