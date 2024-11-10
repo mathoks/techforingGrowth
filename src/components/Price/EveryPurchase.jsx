@@ -56,7 +56,7 @@ const EveryPurchase = memo(({dynamicURL, tabId}) => {
 
   return (
     html.length > 0 ? (
-     <div className='mt-24 lg:block hidden bg-[#EEF4FD] py-16'>
+     <div className='mt-24 lg:block hidden bg-[#EEF4FD] '>
     <div className='custom-container'>
         <h1 className={styles.title}>
             With Every Purchase
@@ -67,8 +67,8 @@ const EveryPurchase = memo(({dynamicURL, tabId}) => {
     <ul>
     {
         html?.length > 0 && (
-                    html?.map(({category,title, button_text}, id)=><li onClick={()=>setIndex(id)} key={id} className='mb-[20px]'>
-                    <h3 className={styles.subTitle}  style={{color: "rgb(15, 147, 177)"}}>{}</h3>
+                    html?.map(({category,title, button_text}, id)=><li value={id} onClick={(e)=>{setIndex(id); console.log(e.target.value)}} key={id} className='mb-[20px]' style={{color: id === index ? "rgb(15, 147, 177)" : ''}}>
+                    <h3  className={styles.subTitle}  ></h3>
                         {title}
                     </li>)
                 )}
