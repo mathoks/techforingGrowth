@@ -1,6 +1,6 @@
 "use client";
 import { getPriceSlider } from "@/utils/price";
-import { priceHeroSliderOption } from "@/utils/sliderOptions";
+import { priceHeroSliderOption, resourcesHeroSliderOption } from "@/utils/sliderOptions";
 
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import React, { useEffect, useState } from "react";
@@ -40,7 +40,7 @@ const HeroSlider = ({ dynamicURL, tabId }) => {
         <Splide
           aria-labelledby="autoplay-hero-heading"
           options={{
-             autoplay: true,    
+     
              ...priceHeroSliderOption,
           }}
           className="py-4"

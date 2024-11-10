@@ -67,7 +67,7 @@ const EveryPurchase = memo(({dynamicURL, tabId}) => {
     <ul>
     {
         html?.length > 0 && (
-                    html?.map(({category,title, button_text}, id)=><li value={id} onClick={(e)=>{setIndex(id); console.log(e.target.value)}} key={id} className='mb-[20px]' style={{color: id === index ? "rgb(15, 147, 177)" : ''}}>
+                    html?.map(({title}, id)=><li value={id} onClick={()=>{setIndex(id)}} key={id} className={`mb-[20px]  before:content-[''] before:w-[4px] before:absolute before:bg-primary before:transition-all before:inset-x-[24px] top-4  before:h-[4rem]  ${id === index ? "before:opacity-100" : "before:opacity-0" } } `} style={{color: id === index ? "rgb(15, 147, 177)" : ''}}>
                     <h3  className={styles.subTitle}  ></h3>
                         {title}
                     </li>)

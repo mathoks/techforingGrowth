@@ -71,6 +71,7 @@ function Page() {
 
         const data = await res.json();
         setProductData(data);
+        
         setSingleProduct(data[currentIndex])
         setValue(tabId)
       } catch (error) {

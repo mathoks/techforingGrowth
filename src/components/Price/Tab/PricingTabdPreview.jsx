@@ -209,7 +209,7 @@ const PricingTabPreview = ({
                 <Splide
                   options={{
                     omitEnd: true,
-
+                    
                     ...paginationSliderOption,
                     pagination: {
                       className: "flex justify-center mb-4",
