@@ -134,15 +134,15 @@ export const paginationSliderOption = {
 
 
         1440: {
-            gap: '2rem',
+            gap: '1rem',
             rewind: false,
             resetProgress: false,
             perPage: 4,
             perMove: 1,
             focus: 'center',
             pagination: false,
-        
-            width: '60%',
+            margin: '20px',
+            width: '45%',
             arrows: false,
         
             

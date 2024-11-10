@@ -1,8 +1,8 @@
 "use client";
 import { getPriceSlider } from "@/utils/price";
-import { priceHeroSliderOption, resourcesHeroSliderOption } from "@/utils/sliderOptions";
+import { priceHeroSliderOption } from "@/utils/sliderOptions";
 
-import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
 import React, { useEffect, useState } from "react";
 
 const HeroSlider = ({ dynamicURL, tabId }) => {

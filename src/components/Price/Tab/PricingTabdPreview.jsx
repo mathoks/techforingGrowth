@@ -2,18 +2,15 @@
 import React, { useState, memo, useEffect } from "react";
 import TabHeaderSvg from "../../../../public/TabHeader.svg";
 import Image from "next/image";
-import { ArrowDown, ArrowUp } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import CheckCircleIcon from "../../../../public/icons/CheckCircleIcon";
 import BulbIconLigth from "../../../../public/icons/BulbIconLigth";
-import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
-import { paginationStyle } from "@/components/resources/customSliderRules";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 import {
   paginationSliderOption,
   paginationStyle2,
 } from "@/utils/sliderOptions";
-import styles from "@/utils/sliderOptions";
-import { useFooterCTA } from "@/utils/price";
 
 const SeeMoreButton = ({ custom_colour, scrollfunc }) => (
   <button
@@ -39,12 +36,21 @@ export const PriceView = memo(({ currency, paymentMethods = [], method }) => {
   if (!priceDetails) return;
 
   const price = {
-    Monthly: priceDetails.price + "/" + "mo",
-    Yearly: priceDetails.price + "/" + "year",
-    Quarterly: priceDetails.price,
+    Monthly:
+      currency === "USD"
+        ? "$" + priceDetails.price + "/" + "mo"
+        : "&" + priceDetails.price + "/" + "mo",
+    Yearly:
+      currency === "USD"
+        ? "$" + priceDetails.price + "/" + "year"
+        : "&" + priceDetails.price + "/" + "year",
+    Quarterly:
+      currency === "USD"
+        ? "$" + priceDetails.price + "/" + "quarterly"
+        : "&" + priceDetails.price + "/" + "quarterly",
   }[method];
 
-  return <div className=" font-bold">{price}</div>;
+  return <div className=" font-bold ">{price}</div>;
 });
 
 const PricingTabPreview = ({
@@ -202,14 +208,14 @@ const PricingTabPreview = ({
                 </p>
               </div>
             </div>
-            <div className=" hide-scrollbar mx-auto o px-4 md:px-0  w-[100%]">
+            <div className=" hide-scrollbar mx-auto  px-4 md:px-0  w-[100%]">
               <div className="relative py-4 mb-4 flex-col w-full mx-auto justify-center">
                 {/* <div className="  max-w-[1240px]  mx-auto px-20 xs:px-2.5 lg:px-0 ls:px-20 sp:px-10  sm:px-0 h-fit relative"> */}
                 {/* <div className=" hide-scrollbar"> */}
                 <Splide
                   options={{
                     omitEnd: true,
-                    
+
                     ...paginationSliderOption,
                     pagination: {
                       className: "flex justify-center mb-4",
@@ -222,26 +228,7 @@ const PricingTabPreview = ({
                   onDragged={(_, newIndex) => setActiveIndex(newIndex)}
                   className=" hide-scrollbar  justify-center md:px-4  mx-auto  mb-4 md:mb-0 "
                 >
-                  {/* <div className="splide__arrows">
-                      <div className="splide__arrow splide__arrow--prev rotate-90 flex items-center rounded-none -inset-x-12 w-32 bg-orange-400 justify-between ">
-                        <span>
-                          <ArrowUp />
-                        </span>
-                        <h2>show more</h2>
-                        <span>
-                          <ArrowUp />
-                        </span>
-                      </div>
-                      <div className="splide__arrow splide__arrow--next rotate-90 flex items-center   rounded-none  w-32 bg-orange-400 justify-between -right-8 ">
-                        <span>
-                          <ArrowUp />
-                        </span>
-                        <h2>show more</h2>
-                        <span>
-                          <ArrowUp />
-                        </span>
-                      </div>
-                    </div> */}
+                 
 
                   {availableProduct[currentIndex]?.product_packages.map(
                     (

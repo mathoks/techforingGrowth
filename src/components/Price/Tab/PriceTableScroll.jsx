@@ -18,12 +18,19 @@ const PriceTableScroll = forwardRef(
     ref
   ) => {
     const [combine_product, setComBinedProduct] = useState({});
-    // style={{transform : showDiv ? "rotate(180deg)" : "rotate(-360deg)",  transition: "transform 0.3s ease-in-out"  } }  className='text-[#0F93B1] text-xl'
     const [showDiv, setCollapseAcordion] = useState(true)
+    const [showCom, setShowCom] = useState([true, true, true])
 
-    const handleAccordion = ()=>{
-      setCollapseAcordion((prev)=> !prev)
-     }
+    const handleAccordion = (e) => {
+      setCollapseAcordion((prev) => !prev);
+      
+    
+      if (dynamicURL === "combine_product") {
+        setShowCom((prev) =>
+          prev.map((item, id) => (id === parseInt(e.target.id) ? !item : item))
+        );
+      }
+    };
 
     
 
@@ -212,9 +219,18 @@ const PriceTableScroll = forwardRef(
                       {short_description}
                       <div>
                         <ChevronUpIcon
-                          className="w-[24px] h-[24px] text-dark-text-3"
-                          height={"1em"}
-                          width={"1em"}
+                          // className="w-[24px] h-[24px] text-dark-text-3"
+                          // height={"1em"}
+                          // width={"1em"}
+                          id={i}
+                        style={{
+                          transform: showCom[i]
+                            ? "rotate(180deg)"
+                            : "rotate(-360deg)",
+                          transition: "transform 0.3s ease-in-out",
+                        }}
+                        onClick={handleAccordion}
+                        className="text-[#0F93B1] text-xl"
                         />
                       </div>
                     </div>
@@ -224,7 +240,7 @@ const PriceTableScroll = forwardRef(
                 <div className="flex justify-center items-center bg-gray-100 ">
                   <div className="w-full overflow-auto">
                     <table className="w-full bg-white overflow-hidden">
-                      <tbody>
+                     {showCom[i]  && <tbody>
                         {features?.map(
                           (
                             {
@@ -272,7 +288,7 @@ const PriceTableScroll = forwardRef(
                             </tr>
                           )
                         )}
-                      </tbody>
+                      </tbody>}
                     </table>
                   </div>
                 </div>
