@@ -157,6 +157,7 @@ export const paginationSliderOption = {
             arrows: false, 
             focus: 'center',
             pagination: true,
+            width: '60%'
             
             
         },

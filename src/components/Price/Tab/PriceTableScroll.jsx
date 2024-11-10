@@ -2,6 +2,7 @@
 import React, { forwardRef, useEffect, useState } from "react";
 import { ChevronUpIcon, CircleAlert, Minus, Check } from "lucide-react";
 import { PriceView } from "./PricingTabdPreview";
+import Image from "next/image";
 
 const PriceTableScroll = forwardRef(
   (
@@ -48,6 +49,8 @@ const PriceTableScroll = forwardRef(
           const data = await res.json();
           if (dynamicURL === "combine_product") {
             setComBinedProduct(data);
+    console.log(combine_product?.clone_products?.find(({name})=> name === "Techforing Human" ))
+
           } else setSingleProduct(data);
         } catch (error) {
           console.error("Error fetching data:", error);
@@ -56,10 +59,15 @@ const PriceTableScroll = forwardRef(
         }
       };
 
-      fetchData();
+
+      if (tabId && dynamicURL) {
+        fetchData();
+      }
     }, [tabId, dynamicURL]);
 
-    
+   
+    console.log(combine_product?.clone_products?.find(({name})=> name === "Techforing Human" ))
+
     const [Name, styledName ] =
       Object.keys(singleProduct).length === 0
         ? []
@@ -113,8 +121,8 @@ const PriceTableScroll = forwardRef(
             )}
           </div>
         </div>
-        {Object.keys(singleProduct).length > 0 &&
-        !Object.keys(singleProduct).includes("products") ? (
+        {dynamicURL === 'product_id' ?
+        
           <div >
             <div className="bg-[#EEF4FD] border-b-[0.8px] border-[#C1C1C1] border-t-2 border-t-white cursor-pointer mt-1 w-full text-center items-center flex justify-center sticky top-[213px] z-20">
               <div className="w-full flex ">
@@ -149,7 +157,7 @@ const PriceTableScroll = forwardRef(
             <div  className="flex justify-center items-center bg-gray-100">
               <div className="w-full overflow-auto">
                <table   className="w-full bg-white overflow-hidden">
-               { showDiv &&   <tbody data-tabeId = 'main-0'>
+               { showDiv &&   <tbody>
                     {singleProduct?.features?.map(
                       (
                         { feature, value, product_packages, product: prodId },
@@ -157,7 +165,7 @@ const PriceTableScroll = forwardRef(
                       ) => (
                         <tr
                           key={id}
-                          className="bg-[#FCFCFC] "
+                          className="bg-[#FCFCFC] grid grid-cols-3"
                           style={{
                             borderBottom: "0.5px  solid rgb(226, 226, 226)",
                           }}
@@ -171,7 +179,7 @@ const PriceTableScroll = forwardRef(
                               </span>
                             </div>
                           </td>
-                          <td className="px-4 py-3 text-center">
+                          <td className="px-4 py-3 text-center col-span-1 mx-auto">
                             {product_packages.find(
                               ({ product }) => product === prodId
                             ) ? (
@@ -180,7 +188,7 @@ const PriceTableScroll = forwardRef(
                               <Minus className="h-[1em] w-[1em] text-gray-400 text-2xl" />
                             )}
                           </td>
-                          <td className="px-4 py-3 text-center">
+                          <td className="px-4 py-3 text-center col-span-1 mx-auto">
                             {product_packages.find(
                               ({ product }) => product === prodId
                             ) ? (
@@ -198,20 +206,19 @@ const PriceTableScroll = forwardRef(
               </div>
             </div>
           </div>
-        ) : (
+         : 
 
-
-          
-          combine_product?.clone_products?.map(
-            ({ features, images, name, short_description }, i) => (
-              <div key={i}>
-                <div className="bg-[#EEF4FD] border-b-[2px] border-t-[4px] border-white cursor-pointer mt-1 w-full text-center items-center flex justify-center sticky z-20 top-[213px]">
+          dynamicURL === "combine_product" && combine_product?.products?.map(({name, short_description, images}, id)=>
+            <>
+             <div className={`bg-[#EEF4FD] border-b-[2px] border-t-[4px] border-white cursor-pointer mt-1 w-full text-center items-center flex justify-center sticky z-20 ${id === 0 ? 'top-[213px]' : id===1 ? 'top-[257px]' : 'top[300px]'}`}>
                   <div className="w-full flex ">
                     <div className="flex  items-center gap-2 w-1/3 border-r border-[#C1C1C1] px-2 py-2">
-                      <img
+                      <Image
                         className="w-6 h-6"
                         alt="human"
-                        src={images[images.length - 1]}
+                        width={6}
+                        height={6}
+                        src={images[images.length-1]?.image}
                       />
                       <span>{name}</span>
                     </div>
@@ -222,9 +229,9 @@ const PriceTableScroll = forwardRef(
                           // className="w-[24px] h-[24px] text-dark-text-3"
                           // height={"1em"}
                           // width={"1em"}
-                          id={i}
+                          id={id}
                         style={{
-                          transform: showCom[i]
+                          transform: showCom[id]
                             ? "rotate(180deg)"
                             : "rotate(-360deg)",
                           transition: "transform 0.3s ease-in-out",
@@ -236,29 +243,28 @@ const PriceTableScroll = forwardRef(
                     </div>
                   </div>
                 </div>
-
-                <div className="flex justify-center items-center bg-gray-100 ">
-                  <div className="w-full overflow-auto">
-                    <table className="w-full bg-white overflow-hidden">
-                     {showCom[i]  && <tbody>
-                        {features?.map(
-                          (
-                            {
+                        <div className="flex justify-center items-center bg-gray-100">
+                        <div className="w-full overflow-auto">
+                        <table key={id} className="w-full bg-white overflow-hidden">
+                        { showCom[id]  && <tbody key={id}>
+           { combine_product?.clone_products?.find(({name})=> name === name ).features?.map(({
                               feature,
                               value,
                               product_packages,
                               product: prodId,
                             },
-                            id
-                          ) => (
+                            id ) => (
+                  
+                    
+                     
                             <tr
                               key={id}
-                              className="bg-[#FCFCFC] "
+                              className="bg-[#FCFCFC] grid grid-cols-3"
                               style={{
                                 borderBottom: "0.5px  solid rgb(226, 226, 226)",
                               }}
                             >
-                              <td className="px-4 w-full   py-3 text-sm font-medium text-dark-text-3 flex gap-2 ">
+                              <td className="px-4  col-span-1    py-3 text-sm font-medium text-dark-text-3 flex gap-2 ">
                                 <div className="truncate ">{feature}</div>
                                 <div className=" -mt-1 -ml-1 relative group">
                                   <CircleAlert className="text-[#0F93B1] w-[12px] h-[13px]" />
@@ -267,7 +273,7 @@ const PriceTableScroll = forwardRef(
                                   </span>
                                 </div>
                               </td>
-                              <td className="px-4 py-3 text-center col-span-3">
+                              <td className="px-4 py-3 text-center col-span-1 mx-auto">
                                 {product_packages.find(
                                   ({ product }) => product === prodId
                                 ) ? (
@@ -276,7 +282,7 @@ const PriceTableScroll = forwardRef(
                                   <Minus className="h-[1em] w-[1em] text-gray-400 text-2xl" />
                                 )}
                               </td>
-                              <td className="px-4 py-3 text-center col-span-3">
+                              <td className="px-4 py-3 text-center col-span-1 mx-auto">
                                 {product_packages.find(
                                   ({ product }) => product === prodId
                                 ) ? (
@@ -286,19 +292,21 @@ const PriceTableScroll = forwardRef(
                                 )}
                               </td>
                             </tr>
+           
+                            
+           
                           )
                         )}
-                      </tbody>}
-                    </table>
-                  </div>
-                </div>
-              </div>
+                        </tbody> }
+           
+                        </table>
+                        </div>
+
+                        </div>
+                 </>          
             )
-          )
-        )}
+        }
       </div>
-    );
-  }
-);
+  )});
 
 export default PriceTableScroll;

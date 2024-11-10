@@ -53,7 +53,7 @@ const EveryPurchase = memo(({ dynamicURL, tabId }) => {
     <div className="mt-24 lg:block hidden bg-[#EEF4FD] ">
       <div className="custom-container pb-11">
         <h1 className={styles.title}>
-          With Every Purchase
+          With Every Purchase, 
           <span>You Will Get!</span>
         </h1>
         <div className="flex gap-6 mt-12">
@@ -75,7 +75,7 @@ const EveryPurchase = memo(({ dynamicURL, tabId }) => {
                     } } `}
                     style={{ color: id === index ? "rgb(15, 147, 177)" : "" }}
                   >
-                    <h3 className={styles.subTitle}> {title}</h3>
+                    <h3 className={styles.subTitle} style={{ color: id === index ? "rgb(15, 147, 177)" : "" }}> {title}</h3>
                   </li>
                 ))}
             </ul>
